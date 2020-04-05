@@ -1,0 +1,12 @@
+<!-- The sidebar -->
+<div class="sidebar">
+    <a [routerLink]="'adminhome'" routerLinkActive="active">Home</a>
+    <a [routerLink]="'adminuser'" routerLinkActive="active">Users</a>
+    <a [routerLink]="'adminmover'" routerLinkActive="active">Movers</a>
+    <a [routerLink]="'adminrequest'" routerLinkActive="active">Requests</a>
+    <a [routerLink]="'admincontact'" routerLinkActive="active">User Messages</a>
+</div>
+<!-- Page content -->
+<div class="content">
+    <router-outlet></router-outlet>    
+</div>

@@ -1,0 +1,32 @@
+<div class="table-responsive">
+    <!--Table-->
+    <table class="table table-striped">
+  
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Subject</th>
+          <th>Message</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+  
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let obj of ContactList,index as id">
+          <td>#</td>
+          <td>{{obj.name}}</td>
+          <td>{{obj.email}}</td>
+          <td>{{obj.subject}}</td>
+          <td>{{obj.msg}}</td>
+          <td><a class='fa fa-trash' style='font-size:20px;color:red' (click)="deleteContact(id)">Delete</a></td>
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>

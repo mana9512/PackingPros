@@ -1,0 +1,40 @@
+<div class="table-responsive">
+    <!--Table-->
+    <table class="table table-striped">
+  
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Delivery Title</th>
+          <th>PickUp Date</th>
+          <th>PickUp Location</th>
+          <th>Delivery Location</th>
+          <th>Delivery Date</th>
+          <th>View</th>
+          <th>Bid</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+  
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let obj of AllRequest,index as id">
+          <td>#</td>
+          <td>{{obj.title}}</td>
+          <td>{{obj.pickupdate}}</td>
+          <td>{{obj.pickuplocation}}</td>
+          <td>{{obj.deliverylocation}}</td>
+          <td>{{obj.deliverydate}}</td>
+          <td><a class="fa fa-eye" style='text-decoration: none;font-size: 20px;color: green;'(click)="bidRequest(id)">View</a></td>
+          <td><ng-container *ngFor="let item of Bidlist,index as bid">
+            <ng-container *ngIf="item.requestID===obj._id">{{item.bidvalue}}</ng-container>
+            
+          </ng-container>
+          <button class='btn btn-primary fa fa-inr' style='text-decoration: none;font-size:20px;color:white' (click)="bidRequestSubmit(id)">Bid</button></td>
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>

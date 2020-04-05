@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="image" style="float: left;margin-left: 15%;margin-top: 5%;">
+        <img src="{{RequestInfoBid.img}}" class="img-thumbnail" width="432" height="367">
+    </div>
+    <div class="details" style="float: right;margin-left: 11%;margin-top: 4%; ">
+        <span style="text-transform: uppercase;font-size: 64Px;">Bid Details</span>
+        <div *ngIf="isBid; else elseTemplate">
+        <ul  class="list-group" style="margin-top: 31px;">
+            <li class="list-group-item">BidValue : {{RequestBid.bidvalue}} </li>
+            <li class="list-group-item">By : {{RequestBid.movermail}} </li>
+            <li class="list-group-item"> <button class='btn btn-primary' style='text-decoration: none;font-size:20px;color:white' (click)="ConfirmBid(RequestBid._id,RequestBid.requestId,RequestBid.movermail,RequestBid.useremail)">Confirm</button></li>
+        </ul>
+    </div>
+    <ng-template #elseTemplate><li class="list-group-item">No Bids Placed</li></ng-template>
+    </div>
+</div>
+<div class="row" style="margin-bottom: 50px;">
+    <div class="plocation" style="float: left;margin-left: 15%;margin-top: 3%;">
+            <span style="text-transform: uppercase;font-size: 54Px;">Pickup location</span>
+            <ul class="list-group" style="margin-top: 31px;">
+                <li class="list-group-item">Address : {{RequestInfoBid.pickuplocation}}</li>
+                <li class="list-group-item">Date : {{RequestInfoBid.pickupdate}}</li>
+                <li class="list-group-item">Time : {{RequestInfoBid.pickuptime}}</li>
+            </ul>
+    </div>
+    <div class="dlocation" style="float: right;margin-left: 11%;margin-top: 47px;">
+            <span style="text-transform: uppercase;font-size: 50Px;">Delivery location</span>
+            <ul class="list-group" style="margin-top: 36px;">
+                <li class="list-group-item">Address : {{RequestInfoBid.deliverylocation}}</li>
+                <li class="list-group-item">Date : {{RequestInfoBid.deliverydate}}</li>
+                <li class="list-group-item">Description : {{RequestInfoBid.description}}</li>
+            </ul>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/request/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/request/css/main.css">
+<!--===============================================================================================-->
+
+	<div class="container-contact100">
+		<div class="contact100-map" id="google_map"><img src='assets/2.jpg' height="100%" width="100%"></div>
+	
+		<div class="wrap-contact100">
+			<div class="contact100-form-title" style="background-image: url(assets/request/images/bg-01.jpg);">
+				<span class="contact100-form-title-1">
+					Post Request
+				</span>
+			</div>
+
+			<form class="contact100-form validate-form" (submit)="RequestDataEntry($event)">
+				<div class="wrap-input100 validate-input" data-validate="Title is required">
+					<span class="label-input100">Delivery Title:</span>
+					<input class="input100" type="text" id="title" placeholder="Enter Delivery Title ">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "PickUp Location required">
+					<span class="label-input100">PickUp Location:</span>
+					<input class="input100" type="text" id="pickuplocation" placeholder="Enter PickUp Location">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="PickUp Date is required">
+					<span class="label-input100">PickUp Date:</span>
+					<input class="input100" type="date" id="pickupdate" placeholder="Enter PickUp Date">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "PickUp Time is required">
+					<span class="label-input100">PickUp Time:</span>
+                    <input class="input100" type="time" id="pickuptime" placeholder="Enter PickUp Time">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Delivery Location required">
+					<span class="label-input100">Delivery Location:</span>
+					<input class="input100" type="text" id="deliverylocation" placeholder="Enter Delivery Location">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Delivery Date required">
+					<span class="label-input100">Delivery Date:</span>
+					<input class="input100" type="date" id="deliverydate" placeholder="Enter Delivery Date">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Description required">
+					<span class="label-input100">Description:</span>
+					<textarea class="input100" id="description" placeholder="Your Description..."></textarea>
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100">
+                    <span class="label-input100">Image:</span>
+                    <input type="file" id="requestimg" (change)="handleFileInput($event.target.files)"/>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" type="submit">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="assets/request/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/request/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/request/vendor/bootstrap/js/popper.js"></script>
+	<script src="assets/request/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/request/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/request/vendor/daterangepicker/moment.min.js"></script>
+	<script src="assets/request/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/request/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="assets/request/js/map-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/request/js/main.js"></script>

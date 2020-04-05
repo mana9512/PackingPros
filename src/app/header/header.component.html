@@ -1,0 +1,135 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" *ngIf="!islogged">
+    <a class="navbar-brand" style="margin-left:50px; text-decoration: none;" [routerLink]="['/home']"><img src="assets/logo.png"> Ready To Move</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" style="margin-left: 67%;">
+        
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/home']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/product']">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-info btn-sm" [routerLink]="['/selectlogin']" style="margin-top: 4px"><span class="glyphicon glyphicon-user"></span>Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>   
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" *ngIf="islogged && userType == 'user'">
+        <a class="navbar-brand" style="margin-left:50px; text-decoration: none;" [routerLink]="['/home']"><img src="assets/logo.png"> Ready To Move</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto" style="margin-left: 61%;">
+            
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['/home']">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/product']">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/request']">Request</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="margin-top: 2px;color: gray;">
+                <span style="text-transform: uppercase;" class="fa fa-user-circle-o">&nbsp;&nbsp;{{fname}}</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['/editprofile']">Edit Profile</a>
+                    <a class="dropdown-item" [routerLink]="['/changepassword']">Change Password</a>
+                    <a class="dropdown-item" [routerLink]="['/listrequest']">List Request</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"  (click)="onLogout()">Log out</a>
+                </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" *ngIf="islogged && userType == 'mover'">
+        <a class="navbar-brand" style="margin-left:50px; text-decoration: none;" [routerLink]="['/home']"><img src="assets/logo.png"> Ready To Move</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto" style="margin-left: 61%;">
+            
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['/home']">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/product']">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/moverrequestlist']">Request List</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+            </li> -->
+            <li class="nav-item">
+                <div class="dropdown">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="margin-top: 2px;color: gray;">
+                <span style="text-transform: uppercase;" class="fa fa-user-circle-o">&nbsp;&nbsp;{{oname}}</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['/editprofile']">Edit Profile</a>
+                    <a class="dropdown-item" [routerLink]="['/changepassword']">Change Password</a>
+                    <!-- <a class="dropdown-item" [routerLink]="['/listrequest']">List Request</a> -->
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"  (click)="onLogout()">Log out</a>
+                </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" *ngIf="islogged && userType == 'admin'">
+        <a class="navbar-brand" style="margin-left:50px; text-decoration: none;" [routerLink]="['/home']"><img src="assets/logo.png"> Ready To Move</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto" style="margin-left: 70%;">
+            
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['/admin']">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/product']">Products</a>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="margin-top: 2px;color: gray;">
+                <span style="text-transform: uppercase;" class="fa fa-user-circle-o">&nbsp;&nbsp;Hello,Admin</span>
+                </button>
+                <div class="dropdown-menu">
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"  (click)="onLogout()">Log out</a>
+                </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+  

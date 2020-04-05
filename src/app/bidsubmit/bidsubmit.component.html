@@ -1,0 +1,56 @@
+<style>
+    input[type=text] {
+      width: 74%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+    
+    input[type=text]:focus {
+      border: 3px solid #555;
+    }
+    </style>
+    <div class="row">
+            <div class="image" style="float: left;margin-left: 15%;margin-top: 5%;">
+                <img src="{{RequestInfoBid.img}}" class="img-thumbnail" alt="Cinque Terre" width="432" height="367">
+            </div>
+            <div class="details" style="float: right;margin-left: 11%;margin-top: 4%; ">
+                <span style="text-transform: uppercase;font-size: 64Px;">User Details</span>
+                <ul class="list-group" style="margin-top: 31px;">
+                    <li class="list-group-item">Name : {{RequestUser.fname}} {{RequestUser.lname}}</li>
+                    <li class="list-group-item">Email : {{RequestUser.email}}</li>
+                    <li class="list-group-item">Mobile No : {{RequestUser.number}}</li>
+                </ul>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="bid" style="margin-left: 55%;float: left;">
+            <form (submit)="BidSubmit($event)">
+            <input type="text" id="bid" placeholder="Bid">
+            <div style="float: right;"><button type="submit" class="btn btn-primary" style="margin-top: 15px;">Submit</button></div>
+            </form>
+        </div>
+    </div>
+        <div class="row" style="margin-bottom: 50px;">
+            <div class="plocation" style="float: left;margin-left: 15%;margin-top: 3%;">
+                    <span style="text-transform: uppercase;font-size: 54Px;">Pickup location</span>
+                    <ul class="list-group" style="margin-top: 31px;">
+                        <li class="list-group-item">Address : {{RequestInfoBid.pickuplocation}}</li>
+                        <li class="list-group-item">Date : {{RequestInfoBid.pickupdate}}</li>
+                        <li class="list-group-item">Time : {{RequestInfoBid.pickuptime}}</li>
+                    </ul>
+            </div>
+            <div class="dlocation" style="float: right;margin-left: 11%;margin-top: 47px;">
+                    <span style="text-transform: uppercase;font-size: 50Px;">delivery location</span>
+                    <ul class="list-group" style="margin-top: 36px;">
+                        <li class="list-group-item">Address : {{RequestInfoBid.deliverylocation}}</li>
+                        <li class="list-group-item">Date : {{RequestInfoBid.deliverydate}}</li>
+                        <li class="list-group-item">Description : {{RequestInfoBid.description}}</li>
+                    </ul>
+            </div>
+        </div>
+    
